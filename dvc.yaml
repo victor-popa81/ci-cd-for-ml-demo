@@ -1,0 +1,20 @@
+stages:
+  preprocess:
+    cmd: python raw_dataset/preprocess_dataset.py
+    deps:
+    - raw_dataset/preprocess_dataset.py
+    - raw_dataset/weather.csv
+    - raw_dataset/utils_and_constants.py
+    outs:
+    - processed_dataset/weather.csv
+  train:
+    cmd: python raw_dataset/train.py
+    deps:
+    - raw_dataset/model.py
+    - raw_dataset/metrics_and_plots.py
+    - processed_dataset/weather.csv
+    - raw_dataset/train.py
+    - raw_dataset/utils_and_constants.py
+    outs:
+    - confusion_matrix.png
+    - metrics.json
