@@ -28,4 +28,4 @@ def evaluate_model(model, X_test, y_test, float_precision=4):
 
     return json.loads(
         json.dumps(metrics), parse_float=lambda x: round(float(x), float_precision)
-    )
+    ), y_pred
