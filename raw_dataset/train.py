@@ -16,7 +16,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1993)
 
     # Load hyperparameters from the JSON file
-    hyperparameters = load_hyperparameters("rfc_best_params.json")
+    hyperparameters = load_hyperparameters("raw_dataset/rfc_best_params.json")
     # Train the model using the training set
     model = train_model(X_train, y_train)
     
