@@ -18,7 +18,7 @@ def main():
     # Load hyperparameters from the JSON file
     hyperparameters = load_hyperparameters("raw_dataset/rfc_best_params.json")
     # Train the model using the training set
-    model = train_model(X_train, y_train)
+    model = train_model(X_train, y_train, hyperparameters)
     
     # Calculate test set metrics
     metrics, y_pred, y_pred_proba = evaluate_model(model, X_test, y_test)
