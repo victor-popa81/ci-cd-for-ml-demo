@@ -27,7 +27,9 @@ jobs:
           
       # Run DVC pipeline
       - name: Run DVC pipeline
-        run: dvc repro
+        run: |
+          dvc pull
+          dvc repro
 
       - name: Write CML report
         env:
