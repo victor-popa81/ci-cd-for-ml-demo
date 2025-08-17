@@ -12,7 +12,7 @@ def main():
 
     model = RandomForestClassifier()
     # Read the config file to define the hyperparameter search space
-    param_grid = json.load(open("hp_config.json", "r"))
+    param_grid = json.load(open("raw_dataset/hp_config.json", "r"))
 
     # Perform Grid Search Cross Validation on training data
     grid_search = GridSearchCV(model, param_grid, cv=5, n_jobs=1, verbose=2)
@@ -24,7 +24,7 @@ def main():
     print(json.dumps(best_params, indent=2))
     print("==========================================================")
 
-    with open("rfc_best_params.json", "w") as outfile:
+    with open("raw_dataset/rfc_best_params.json", "w") as outfile:
         json.dump(best_params, outfile)
 
     markdown_table = get_hp_tuning_results(grid_search)

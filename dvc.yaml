@@ -28,6 +28,7 @@ stages:
     - processed_dataset/weather.csv
     - raw_dataset/train.py
     - raw_dataset/utils_and_constants.py
+    - raw_dataset/rfc_best_params.json
     outs:
     - confusion_matrix.png
     metrics:
