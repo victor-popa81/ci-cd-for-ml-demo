@@ -28,7 +28,7 @@ jobs:
       # Run DVC pipeline
       - name: Run DVC pipeline
         run: |
-          dvc pull
+          dvc pull --no-browser
           dvc repro
 
       - name: Write CML report
