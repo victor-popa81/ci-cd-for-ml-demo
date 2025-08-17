@@ -7,6 +7,19 @@ stages:
     - raw_dataset/utils_and_constants.py
     outs:
     - processed_dataset/weather.csv
+  hp_tune:
+    # Set the hyperparameter tuning command
+    cmd: python raw_dataset/hp_tuning.py
+    deps:
+    - processed_dataset/weather.csv
+    # Specify the hyperparameter configuration as dependency
+    - raw_dataset/hp_config.json
+    # Specify the hyperparameter script as dependency
+    - raw_dataset/hp_tuning.py
+    - raw_dataset/utils_and_constants.py
+    outs:
+      - hp_tuning_results.md:
+          cache: false
   train:
     cmd: python raw_dataset/train.py
     deps:
