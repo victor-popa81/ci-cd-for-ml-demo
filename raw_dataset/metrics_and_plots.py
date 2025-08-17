@@ -3,6 +3,7 @@ import json
 import matplotlib.pyplot as plt
 from sklearn.metrics import ConfusionMatrixDisplay, roc_curve
 import pandas as pd
+import numpy as np
 
 
 def plot_confusion_matrix(model, X_test, y_test):

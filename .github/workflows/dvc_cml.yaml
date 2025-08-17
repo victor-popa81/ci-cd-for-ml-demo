@@ -19,9 +19,7 @@ jobs:
           python-version: 3.9
       
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pandas "scikit-learn<1.7" matplotlib
+        run: pip install -r requirements.txt
 
       - name: Setup CML
         uses: iterative/setup-cml@v1
