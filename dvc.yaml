@@ -48,3 +48,11 @@ stages:
         # Set the cache parameter to store
         # plot data in git repository
         cache: false
+    - roc_curve.csv:
+        template: simple
+        x: fpr
+        y: tpr
+        x_label: 'False Positive Rate'
+        y_label: 'True Positive Rate'
+        title: ROC curve
+        cache: false
