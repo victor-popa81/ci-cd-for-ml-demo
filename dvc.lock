@@ -33,16 +33,16 @@ stages:
       size: 902
     - path: raw_dataset/model.py
       hash: md5
-      md5: e9384f6d5bb4a0f8b66d9d706186548f
-      size: 1029
+      md5: fc2307e8237006154b9e5a500529d3d8
+      size: 1068
     - path: raw_dataset/rfc_best_params.json
       hash: md5
       md5: f02ec8024ed5955e100c8fefbcf7a41b
       size: 58
     - path: raw_dataset/train.py
       hash: md5
-      md5: 5bbbad360358ad725bb11a0842018032
-      size: 1273
+      md5: 9049b98d51e860d71c5d5d0622f85d79
+      size: 1290
     - path: raw_dataset/utils_and_constants.py
       hash: md5
       md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
@@ -50,13 +50,17 @@ stages:
     outs:
     - path: confusion_matrix.png
       hash: md5
-      md5: 59916abfb88f0d6d9b0837be904b3985
-      size: 14308
+      md5: 3637042fd06842d9e7b9f248e7ac4160
+      size: 13860
     - path: metrics.json
       hash: md5
-      md5: 964400ca6c65ee1420a0ab58ec1f023f
+      md5: 597dea9183150e335a2c966e68220c90
       size: 79
     - path: predictions.csv
       hash: md5
-      md5: df29dfdfc2a2f7334ca4ebc7c9a43cb7
+      md5: 6cac1fd0ee1ffb6282cc77a985724bd0
       size: 66046
+    - path: roc_curve.csv
+      hash: md5
+      md5: f5958cefc07b64e884be90423cec43cf
+      size: 402
