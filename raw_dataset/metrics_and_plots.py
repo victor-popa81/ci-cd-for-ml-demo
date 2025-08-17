@@ -1,7 +1,7 @@
 import json
 
 import matplotlib.pyplot as plt
-from sklearn.metrics import ConfusionMatrixDisplay
+from sklearn.metrics import ConfusionMatrixDisplay, roc_curve
 import pandas as pd
 
 
