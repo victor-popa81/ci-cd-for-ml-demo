@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pandas sklearn shutil pathlib json typing matplotlib
+          pip install pandas scikit-learn shutil pathlib json typing matplotlib
 
       - name: Setup CML
         uses: iterative/setup-cml@v1
