@@ -21,46 +21,42 @@ stages:
       md5: 53a97f8296999d1e82a5c504e74ac1f4
       size: 11015821
   train:
-    cmd: python raw_dataset/train.py
+    cmd: python train.py
     deps:
+    - path: metrics_and_plots.py
+      hash: md5
+      md5: 41b7cf56445bf20d9aa8c3c2a5b1fb44
+      size: 902
+    - path: model.py
+      hash: md5
+      md5: fc2307e8237006154b9e5a500529d3d8
+      size: 1068
     - path: processed_dataset/weather.csv
       hash: md5
       md5: 53a97f8296999d1e82a5c504e74ac1f4
       size: 11015821
-    - path: raw_dataset/metrics_and_plots.py
+    - path: rfc_best_params.json
       hash: md5
-      md5: 41b7cf56445bf20d9aa8c3c2a5b1fb44
-      size: 902
-    - path: raw_dataset/model.py
+      md5: 7dac634b14b06cd9a1584180bafdc093
+      size: 57
+    - path: train.py
       hash: md5
-      md5: fc2307e8237006154b9e5a500529d3d8
-      size: 1068
-    - path: raw_dataset/rfc_best_params.json
-      hash: md5
-      md5: 018e92427ce9146a76311f8629ca74a1
-      size: 58
-    - path: raw_dataset/train.py
-      hash: md5
-      md5: 9049b98d51e860d71c5d5d0622f85d79
-      size: 1290
-    - path: raw_dataset/utils_and_constants.py
+      md5: 383b286a44bd2cc9cf14789047021d39
+      size: 1278
+    - path: utils_and_constants.py
       hash: md5
       md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
       size: 1611
     outs:
-    - path: confusion_matrix.png
-      hash: md5
-      md5: 8594f1a403091063d8df4b790ac91734
-      size: 14196
     - path: metrics.json
       hash: md5
-      md5: d4637ec371a47849fe9dd2acf535a06e
-      size: 79
+      md5: 1cb30e7dfd1778df4077af2c518f2012
+      size: 78
     - path: predictions.csv
       hash: md5
-      md5: 3ee0fe86b46319dc4a29c640cd9db6e9
+      md5: b77f22cc07a3941b4439d8c503e03cf0
       size: 66046
     - path: roc_curve.csv
       hash: md5
-      md5: d20be93805d3cfa76dbf371c3a2539bd
-      size: 5272
+      md5: 220be25154cf6fe0f5e89aa8c2a2f5d8
+      size: 2686
