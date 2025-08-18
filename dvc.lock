@@ -1,20 +1,20 @@
 schema: '2.0'
 stages:
   preprocess:
-    cmd: python raw_dataset/preprocess_dataset.py
+    cmd: python preprocess_dataset.py
     deps:
-    - path: raw_dataset/preprocess_dataset.py
+    - path: preprocess_dataset.py
       hash: md5
       md5: 86e49fc7f43f10f13b4ae5c0d3b7b163
       size: 3501
-    - path: raw_dataset/utils_and_constants.py
-      hash: md5
-      md5: be633a900a2b39c868304a4a56e55fa2
-      size: 425
     - path: raw_dataset/weather.csv
       hash: md5
       md5: 9670c5d5106c583cb76467c721867042
       size: 2865022
+    - path: utils_and_constants.py
+      hash: md5
+      md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
+      size: 1611
     outs:
     - path: processed_dataset/weather.csv
       hash: md5
@@ -29,30 +29,38 @@ stages:
       size: 11015821
     - path: raw_dataset/metrics_and_plots.py
       hash: md5
-      md5: 5f5ba7476f81fb3592014dfcb3c9643f
-      size: 560
+      md5: 41b7cf56445bf20d9aa8c3c2a5b1fb44
+      size: 902
     - path: raw_dataset/model.py
       hash: md5
-      md5: f486f62ee7a1430c5cb6024b5534a099
-      size: 952
+      md5: fc2307e8237006154b9e5a500529d3d8
+      size: 1068
+    - path: raw_dataset/rfc_best_params.json
+      hash: md5
+      md5: 018e92427ce9146a76311f8629ca74a1
+      size: 58
     - path: raw_dataset/train.py
       hash: md5
-      md5: 7f5c3c93535f6600b51e604d9a807f84
-      size: 1208
+      md5: 9049b98d51e860d71c5d5d0622f85d79
+      size: 1290
     - path: raw_dataset/utils_and_constants.py
       hash: md5
-      md5: be633a900a2b39c868304a4a56e55fa2
-      size: 425
+      md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
+      size: 1611
     outs:
     - path: confusion_matrix.png
       hash: md5
-      md5: 59916abfb88f0d6d9b0837be904b3985
-      size: 14308
+      md5: 8594f1a403091063d8df4b790ac91734
+      size: 14196
     - path: metrics.json
       hash: md5
-      md5: 964400ca6c65ee1420a0ab58ec1f023f
+      md5: d4637ec371a47849fe9dd2acf535a06e
       size: 79
     - path: predictions.csv
       hash: md5
-      md5: df29dfdfc2a2f7334ca4ebc7c9a43cb7
+      md5: 3ee0fe86b46319dc4a29c640cd9db6e9
       size: 66046
+    - path: roc_curve.csv
+      hash: md5
+      md5: d20be93805d3cfa76dbf371c3a2539bd
+      size: 5272

@@ -1,0 +1,5 @@
+pandas
+scikit-learn<1.7
+matplotlib
+numpy
+tabulate

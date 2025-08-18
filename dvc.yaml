@@ -1,36 +1,48 @@
 stages:
   preprocess:
-    cmd: python raw_dataset/preprocess_dataset.py
+    cmd: python preprocess_dataset.py
     deps:
-    - raw_dataset/preprocess_dataset.py
+    - preprocess_dataset.py
     - raw_dataset/weather.csv
-    - raw_dataset/utils_and_constants.py
+    - utils_and_constants.py
     outs:
     - processed_dataset/weather.csv
-  train:
-    cmd: python raw_dataset/train.py
+  hp_tune:
+    cmd: python hp_tuning.py
     deps:
-    - raw_dataset/model.py
-    - raw_dataset/metrics_and_plots.py
     - processed_dataset/weather.csv
-    - raw_dataset/train.py
-    - raw_dataset/utils_and_constants.py
+    - hp_config.json
+    - hp_tuning.py
+    - utils_and_constants.py
     outs:
-    - confusion_matrix.png
+      - hp_tuning_results.md:
+          cache: false
+  train:
+    cmd: python train.py
+    deps:
+    - metrics_and_plots.py
+    - model.py
+    - processed_dataset/weather.csv
+    - rfc_best_params.json
+    - train.py
+    - utils_and_constants.py
     metrics:
-    # Specify the metrics file as target
-    - metrics.json:
-        cache: false
+      - metrics.json:
+          cache: false
     plots:
-    # Set the target to the file containing predictions data
     - predictions.csv:
-        # Write the plot template
-        template: confusion_normalized
+        template: confusion
         x: predicted_label
         y: true_label
         x_label: 'Predicted label'
         y_label: 'True label'
         title: Confusion matrix
-        # Set the cache parameter to store
-        # plot data in git repository
+        cache: false
+    - roc_curve.csv:
+        template: simple
+        x: fpr
+        y: tpr
+        x_label: 'False Positive Rate'
+        y_label: 'True Positive Rate'
+        title: ROC curve
         cache: false

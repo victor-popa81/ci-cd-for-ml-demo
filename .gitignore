@@ -205,4 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
 /confusion_matrix.png
+/roc_curve.csv
+/predictions.csv
+/hp_tuning_results.md
