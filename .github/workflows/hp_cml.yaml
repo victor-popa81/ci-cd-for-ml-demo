@@ -46,9 +46,9 @@ jobs:
           --user-email hp-bot@cicd.ai \
           --user-name HPBot \
           --message "HP tuning" \
-          # Write the new head branch name
+          # Write the new head branch name \
           --branch train/${{ github.sha }} \
-          # Write the target branch name
+          # Write the target branch name \
           --target-branch main \
-          # Commit the hyperparameter job output file
+          # Commit the hyperparameter job output file \
           rfc_best_params.json
