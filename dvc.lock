@@ -1,20 +1,20 @@
 schema: '2.0'
 stages:
   preprocess:
-    cmd: python raw_dataset/preprocess_dataset.py
+    cmd: python preprocess_dataset.py
     deps:
-    - path: raw_dataset/preprocess_dataset.py
+    - path: preprocess_dataset.py
       hash: md5
       md5: 86e49fc7f43f10f13b4ae5c0d3b7b163
       size: 3501
-    - path: raw_dataset/utils_and_constants.py
-      hash: md5
-      md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
-      size: 1611
     - path: raw_dataset/weather.csv
       hash: md5
       md5: 9670c5d5106c583cb76467c721867042
       size: 2865022
+    - path: utils_and_constants.py
+      hash: md5
+      md5: 3fca01aa1d73fa568ffe6a670ceb8ad4
+      size: 1611
     outs:
     - path: processed_dataset/weather.csv
       hash: md5
