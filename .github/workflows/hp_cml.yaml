@@ -32,6 +32,7 @@ jobs:
 
       - name: Run DVC pipeline
         run: |
+          dvc pull
           dvc repro -f hp_tune
       
       - name: Create training branch
