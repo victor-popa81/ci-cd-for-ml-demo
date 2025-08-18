@@ -37,6 +37,13 @@ jobs:
           dvc pull
           dvc repro -f hp_tune
       
+      - name: Write CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create comment from markdown report
+          cml comment create hp_tuning_results.md
+
       - name: Create training branch
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
